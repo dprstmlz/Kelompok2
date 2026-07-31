@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profil Tokoh Sains & Teknologi Dunia</title>
+    <!-- Memuat MathJax untuk rendering rumus matematika yang akurat -->
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary: #1b365d;
+            --secondary: #3498db;
+            --bg-color: #f4f7f9;
+            --card-bg: #ffffff;
+            --text-color: #2c3e50;
+            --accent: #e74c3c;
+        }
+
+        [data-theme="dark"] {
+            --primary: #8ab4f8;
+            --secondary: #64b5f6;
+            --bg-color: #121212;
+            --card-bg: #1e1e1e;
+            --text-color: #e0e0e0;
+            --accent: #ff8a80;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 20px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 20px 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            margin-bottom: 25px;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 1.8rem;
+        }
+
+        .theme-btn {
+            background: white;
+            color: var(--primary);
+            border: none;
+            padding: 8px 15px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: transform 0.2s;
+        }
+
+        .theme-btn:hover {
+            transform: scale(1.05);
+        }
+
+        .search-box {
+            width: 100%;
+            padding: 12px 20px;
+            font-size: 1rem;
+            border: 2px solid #ccc;
+            border-radius: 8px;
+            margin-bottom: 25px;
+            background-color: var(--card-bg);
+            color: var(--text-color);
+            box-sizing: border-box;
+            transition: border-color 0.3s;
+        }
+
+        .search-box:focus {
+            outline: none;
+            border-color: var(--secondary);
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            border-left: 5px solid var(--secondary);
+            transition: transform 0.2s, background-color 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-3px);
+        }
+
+        .card h2 {
+            margin-top: 0;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section-title {
+            font-weight: bold;
+            color: var(--secondary);
+            margin-top: 12px;
+            margin-bottom: 5px;
+        }
+
+        ul {
+            margin: 0;
+            padding-left: 20px;
+        }
+
+        li {
+            margin-bottom: 5px;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            font-size: 0.9rem;
+            opacity: 0.7;
+        }
+    </style>
+</head>
+<body data-theme="light">
+
+    <div class="container">
+        <header>
+            <h1>📚 Profil Tokoh Sains & Teknologi</h1>
+            <button class="theme-btn" onclick="toggleTheme()">🌙 Mode Gelap</button>
+        </header>
+
+        <input type="text" id="searchInput" class="search-box" placeholder="🔍 Cari berdasarkan nama tokoh, tempat tinggal, atau penemuan..." onkeyup="filterCards()">
+
+        <div id="cardContainer">
+            <!-- Tokoh 1 -->
+            <div class="card" data-keywords="sir isaac newton inggris lincolnshire london fisikawan gravitasi kalkulus">
+                <h2>⚖️ Sir Isaac Newton (1642–1727)</h2>
+                <div><span class="section-title">Tempat Tinggal:</span> Woolsthorpe-by-Colsterworth, Lincolnshire, dan London, Inggris.</div>
+                <div><span class="section-title">Hal yang Membuat Terkenal:</span> Fisikawan, matematikawan, dan astronom paling berpengaruh yang meletakkan dasar mekanika klasik dan hukum gravitasi universal.</div>
+                <div class="section-title">Rumus Paling Terkenal:</div>
+                <ul>
+                    <li>Hukum Kedua Gerak: \(F = m \cdot a\)</li>
+                    <li>Hukum Gravitasi Universal: \(F = G \frac{m_1 m_2}{r^2}\)</li>
+                </ul>
+                <div class="section-title">Penemuan Paling Terkenal:</div>
+                <ul>
+                    <li>Teleskop Pantul (Newtonian Telescope).</li>
+                    <li>Teori Spektrum Cahaya dengan prisma.</li>
+                </ul>
+            </div>
+
+            <!-- Tokoh 2 -->
+            <div class="card" data-keywords="yogi ahmad erlangga indonesia belanda arab saudi helmholtz matematikawan seismik">
+                <h2>🌊 Prof. Dr. Yogi Ahmad Erlangga (Lahir 1974)</h2>
+                <div><span class="section-title">Tempat Tinggal:</span> Tasikmalaya/Bandung, Indonesia (pernah di Belanda, kini di Arab Saudi).</div>
+                <div><span class="section-title">Hal yang Membuat Terkenal:</span> Matematikawan Indonesia yang sukses memecahkan Persamaan Helmholtz tiga dimensi yang membingungkan industri minyak dunia.</div>
+                <div class="section-title">Rumus Paling Terkenal:</div>
+                <ul>
+                    <li>Persamaan Pemodelan Gelombang Akustik: \(\nabla^2 u + k^2 u = f\)</li>
+                    <li>Persamaan Helmholtz faktorisasi numerik gelombang: \(\left(\frac{\partial^2}{\partial x^2} + \frac{\partial^2}{\partial y^2} + \frac{\partial^2}{\partial z^2} + k^2\right) u = f\)</li>
+                </ul>
+                <div class="section-title">Penemuan Paling Terkenal:</div>
+                <ul>
+                    <li>Algoritma percepatan komputasi seismik bawah permukaan bumi.</li>
+                    <li>Metode komputasi numerik lanjutan (*Subsurface Imaging*).</li>
+                </ul>
+            </div>
+
+            <!-- Tokoh 3 -->
+            <div class="card" data-keywords="thomas alva edison amerika serikat ohio new jersey lampu pijar fonograf">
+                <h2>💡 Thomas Alva Edison (1847–1931)</h2>
+                <div><span class="section-title">Tempat Tinggal:</span> Milan, Ohio; Port Huron, Michigan; dan Menlo Park / West Orange, New Jersey, Amerika Serikat.</div>
+                <div><span class="section-title">Hal yang Membuat Terkenal:</span> Penemu prolifik dengan lebih dari 1.000 paten yang memelopori sistem distribusi tenaga listrik searah (DC) dan industri hiburan.</div>
+                <div class="section-title">Rumus Paling Terkenal:</div>
+                <ul>
+                    <li>Hukum Hambatan (Hukum Ohm pada Sistem DC): \(R = \frac{V}{I}\)</li>
+                    <li>Rumus Rugi-Rugi Daya Jaringan Kabel DC: \(P_{\text{loss}} = I^2 \cdot R_{\text{kabel}}\)</li>
+                </ul>
+                <div class="section-title">Penemuan Paling Terkenal:</div>
+                <ul>
+                    <li>Lampu Pijar Komersial.</li>
+                    <li>Fonograf dan Kinetoskop (proyektor film awal).</li>
+                </ul>
+            </div>
+
+            <!-- Tokoh 4 -->
+            <div class="card" data-keywords="nelson tansu indonesia medan pensilvania lehigh university semikonduktor led">
+                <h2>🔬 Prof. Dr. Nelson Tansu (Lahir 1977)</h2>
+                <div><span class="section-title">Tempat Tinggal:</span> Medan, Indonesia, serta Bethlehem, Pennsylvania, Amerika Serikat.</div>
+                <div><span class="section-title">Hal yang Membuat Terkenal:</span> Ilmuwan nanoteknologi dan semikonduktor kelas dunia termuda yang menjadi profesor penuh di Lehigh University serta pionir LED ultra-efisien.</div>
+                <div class="section-title">Rumus Paling Terkenal:</div>
+                <ul>
+                    <li>Persamaan Efisiensi Kuantum Total (Eksternal): \(\eta_{\text{ext}} = \eta_{\text{inj}} \cdot \eta_{\text{int}} \cdot \eta_{\text{extract}}\)</li>
+                    <li>Persamaan Laju Rekombinasi Pembawa Muatan (Carrier Recombination): \(R = An + Bn^2 + Cn^3\)</li>
+                </ul>
+                <div class="section-title">Penemuan Paling Terkenal:</div>
+                <ul>
+                    <li>Teknologi LED Ultraviolet (UV-LED) berdaya tinggi untuk sterilisasi medis.</li>
+                    <li>Desain struktur semikonduktor berbasis nano (*MOCVD-grown nano-heterostructures*).</li>
+                </ul>
+            </div>
+        </div>
+
+        <footer>
+            <p>Dibuat khusus dengan fitur interaktif (Pencarian, Mode Gelap/Terang, & Notasi Matematika Standar).</p>
+        </footer>
+    </div>
+
+    <script>
+        function toggleTheme() {
+            const body = document.body;
+            const btn = document.querySelector('.theme-btn');
+            if (body.getAttribute('data-theme') === 'light') {
+                body.setAttribute('data-theme', 'dark');
+                btn.textContent = '☀️ Mode Terang';
+            } else {
+                body.setAttribute('data-theme', 'light');
+                btn.textContent = '🌙 Mode Gelap';
+            }
+        }
+
+        function filterCards() {
+            const input = document.getElementById('searchInput').value.toLowerCase();
+            const cards = document.querySelectorAll('.card');
+
+            cards.forEach(card => {
+                const text = card.innerText.toLowerCase();
+                const keywords = card.getAttribute('data-keywords').toLowerCase();
+                
+                if (text.includes(input) || keywords.includes(input)) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+    </script>
+</body>
+</html>
+
